@@ -7,6 +7,8 @@ TagManager:
   - Coin
   - FxTemporaire
   - House
+  - Enemy
+  - Moneda
   layers:
   - Default
   - TransparentFX
