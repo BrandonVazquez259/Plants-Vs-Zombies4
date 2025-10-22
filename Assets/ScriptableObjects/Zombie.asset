@@ -15,7 +15,7 @@ MonoBehaviour:
   attackRange: 5
   timeBetweenAttacks: 2
   health: 100
-  speed: 2
+  speed: 0.5
   damage: 10
   enemyName: 
   attackAnimation: Attack

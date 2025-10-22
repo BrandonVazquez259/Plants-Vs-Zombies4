@@ -11,6 +11,8 @@ public class Enemy : MonoBehaviour
     private Animator animator;
     [SerializeField]
     private LayerMask enemiesLayer;
+    [SerializeField]
+    private float raycastOffset = 2f;
     private bool isAttacking = false;
     private Coroutine attackCoroutine;
     private Health targetHealth;
@@ -30,14 +32,15 @@ public class Enemy : MonoBehaviour
         if (!isAttacking)
         {
             transform.Translate(Vector3.left * enemyData.speed * Time.deltaTime);
-            Vector3 forward = transform.TransformDirection(Vector3.forward);
-            if (Physics.Raycast(transform.position, forward, out RaycastHit hit, enemyData.attackRange, enemiesLayer))
+            Vector3 forward = transform.TransformDirection(Vector3.left);
+            Vector3 rayOrigin = transform.position + Vector3.up * raycastOffset;
+            if (Physics.Raycast(rayOrigin, forward, out RaycastHit hit, enemyData.attackRange, enemiesLayer))
             {
                 isAttacking = true;
                 targetHealth = hit.collider.GetComponent<Health>();
                 attackCoroutine = StartCoroutine(Attack());
             }
-            Debug.DrawRay(transform.position, forward * enemyData.attackRange, Color.red);
+            Debug.DrawRay(rayOrigin, forward * enemyData.attackRange, Color.red);
         }
     }
     private IEnumerator Attack()
