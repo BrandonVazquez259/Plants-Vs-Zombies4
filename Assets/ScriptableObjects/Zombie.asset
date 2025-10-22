@@ -12,8 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9d8b89ebb800c564fb214989868fb295, type: 3}
   m_Name: Zombie
   m_EditorClassIdentifier: 
+  attackRange: 5
+  timeBetweenAttacks: 2
   health: 100
-  speed: 5
+  speed: 2
   damage: 10
   enemyName: 
   attackAnimation: Attack
@@ -21,3 +23,4 @@ MonoBehaviour:
   walkAnimation: Walk
   hitAnimation: Hit
   winAnimation: Win
+  idleAnimation: Idle
