@@ -20,7 +20,7 @@ public class Health : MonoBehaviour
     }
     private void UpdateHealthBar()
     {
-        if(healthBar != null)
+        if (healthBar != null)
         {
             healthBar.value = currentHealth / initialHealth;
         }

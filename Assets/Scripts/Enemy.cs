@@ -1,6 +1,6 @@
 using UnityEngine;
 using System.Collections;
-
+using UnityEngine.Events;
 public class Enemy : MonoBehaviour
 {
     [SerializeField]
@@ -13,6 +13,8 @@ public class Enemy : MonoBehaviour
     private LayerMask enemiesLayer;
     [SerializeField]
     private float raycastOffset = 2f;
+    [SerializeField]
+    private UnityEvent<Transform> onAttackTarget;
     private bool isAttacking = false;
     private Coroutine attackCoroutine;
     private Health targetHealth;
@@ -21,6 +23,7 @@ public class Enemy : MonoBehaviour
     {
         health.InitializeHealth(enemyData.health);
         StartLooking();
+        SoundManager.instance.Play("zombie_appear");
     }
     private void StartLooking()
     {
@@ -47,8 +50,11 @@ public class Enemy : MonoBehaviour
     {
         while (targetHealth.CurrentHealth > 0)
         {
-            animator.Play(enemyData.attackAnimation);
-            yield return new WaitForSeconds(animator.GetCurrentAnimatorStateInfo(0).length);
+            SoundManager.instance.Play("zombie_attack");
+            animator.Play(enemyData.attackAnimation, 0, 0f);
+            yield return new WaitForSeconds(enemyData.attackDuration);
+            SoundManager.instance.Play("hit_object");
+            onAttackTarget?.Invoke(targetHealth.transform);
             targetHealth.TakeDamage(enemyData.damage);
             yield return new WaitForSeconds(enemyData.timeBetweenAttacks);
         }
@@ -57,6 +63,7 @@ public class Enemy : MonoBehaviour
     }
     public void Die()
     {
+        SoundManager.instance.Play("zombie_dsie");
         StartCoroutine(DieRoutine());
     }
     private IEnumerator DieRoutine()

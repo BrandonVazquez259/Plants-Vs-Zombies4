@@ -5,6 +5,7 @@ public class EnemyData : ScriptableObject
 {
     public float attackRange = 5f;
     public float timeBetweenAttacks = 2f;
+    public float attackDuration = 1f;
     public float health = 100f;
 
     public float speed = 5f;
