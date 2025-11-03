@@ -15,9 +15,9 @@ MonoBehaviour:
   attackRange: 3.5
   timeBetweenAttacks: 2
   attackDuration: 1.5
-  health: 100
-  speed: 0.5
-  damage: 10
+  health: 200
+  speed: 1
+  damage: 30
   enemyName: Zombie
   attackAnimation: Attack
   deathAnimation: Die

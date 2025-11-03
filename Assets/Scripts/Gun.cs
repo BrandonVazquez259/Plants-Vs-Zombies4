@@ -11,30 +11,72 @@ public class Gun : MonoBehaviour
   private InstantiatePoolObjects bulletPool;
   [SerializeField]
   private Transform bulletPivot;
+  [SerializeField]
+  private LayerMask enemiesLayer;
+  [SerializeField]
+  private float raycastOffset = 2f;
+  [SerializeField]
+  private Animator animator;
+  private bool _isActive = false;
+  private bool isShooting = false;
+  private Health enemyHealth;
   private Coroutine shootCoroutine;
+  public bool IsActive
+    {
+        set{ _isActive = value; }
+    } 
   private void OnEnable()
   {
+    enemyHealth = null;
+    isShooting = false;
     health.InitializeHealth(gunData.maxHealth);
+    animator.Play(gunData.idleAnimationName, 0, 0f);
     //SoundManager.instance.Play(gunData.appearSoundName);
-    shootCoroutine = StartCoroutine(ShootRoutine());
   }
+  private void UpDate()
+    {
+        if (_isActive && !isShooting && health.CurrentHealth > 0)
+        {
+      Vector3 right = transform.TransformDirection(Vector3.right);
+      Vector3 rayOrigin = transform.position + Vector3.up * raycastOffset;
+      if (Physics.Raycast(rayOrigin, right, out RaycastHit hit, gunData.range, enemiesLayer));
+      {
+        isShooting = true;
+        enemyHealth = hit.collider.GetComponent<Health>();
+        shootCoroutine = StartCoroutine(ShootRoutine());
+      }
+      Debug.DrawRay(transform.position, right * gunData.range, Color.blue);
+        }
+    }
   private IEnumerator ShootRoutine()
   {
-  
-    while (true)
+
+    while (enemyHealth && enemyHealth.CurrentHealth > 0)
     {
       yield return new WaitForSeconds(gunData.fireRate);
+      animator.Play(gunData.shootAnimationName, 0, 0f);
       bulletPool.InstantiateObject(bulletPivot);
       SoundManager.instance.Play(gunData.shootSoundName);
     }
+    isShooting = false;
+    enemyHealth = null;
   }
-    public void Die()
-    {
+  public void Die()
+  {
     if (shootCoroutine != null)
     {
       StopCoroutine(shootCoroutine);
+
     }
+    animator.Play(gunData.dieAnimationName, 0, 0f);
+    isShooting = false;
+    enemyHealth = null;
     SoundManager.instance.Play(gunData.dieShootName);
+    StartCoroutine(DieRoutine());
+  }
+    private IEnumerator DieRoutine()
+    {
+    yield return new WaitForSeconds(animator.GetCurrentAnimatorStateInfo(0).length);
     gameObject.SetActive(false);
     }
 }
