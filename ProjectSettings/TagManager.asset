@@ -9,6 +9,8 @@ TagManager:
   - House
   - Enemy
   - Moneda
+  - Floor
+  - Step
   layers:
   - Default
   - TransparentFX

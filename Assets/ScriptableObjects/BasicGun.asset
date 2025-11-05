@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHealth: 30
   fireRate: 2
-  range: 15
+  range: 1
   shootAnimationName: Shoot
   idleAnimationName: Idle
   dieAnimationName: Die

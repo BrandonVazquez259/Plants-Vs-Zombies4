@@ -17,25 +17,26 @@ public class Gun : MonoBehaviour
   private float raycastOffset = 2f;
   [SerializeField]
   private Animator animator;
-  private bool _isActive = false;
+  private bool isActive = true;
   private bool isShooting = false;
   private Health enemyHealth;
   private Coroutine shootCoroutine;
   public bool IsActive
     {
-        set{ _isActive = value; }
+        set{ isActive = value; }
     } 
   private void OnEnable()
   {
     enemyHealth = null;
     isShooting = false;
+    IsActive = true;
     health.InitializeHealth(gunData.maxHealth);
     animator.Play(gunData.idleAnimationName, 0, 0f);
     //SoundManager.instance.Play(gunData.appearSoundName);
   }
-  private void UpDate()
+  private void Update()
     {
-        if (_isActive && !isShooting && health.CurrentHealth > 0)
+        if (isActive && !isShooting && health.CurrentHealth > 0)
         {
       Vector3 right = transform.TransformDirection(Vector3.right);
       Vector3 rayOrigin = transform.position + Vector3.up * raycastOffset;
