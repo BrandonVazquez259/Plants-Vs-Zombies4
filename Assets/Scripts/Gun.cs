@@ -1,10 +1,9 @@
 using UnityEngine;
 using System.Collections;
 
-public class Gun : MonoBehaviour
+public class Gun : BasePlant
 {
-  [SerializeField]
-  private Health health;
+[Header ("Gun Components")]
   [SerializeField]
   private GunData gunData;
   [SerializeField]
@@ -16,23 +15,17 @@ public class Gun : MonoBehaviour
   [SerializeField]
   private float raycastOffset = 2f;
   [SerializeField]
-  private Animator animator;
-  private bool isActive = true;
   private bool isShooting = false;
   private Health enemyHealth;
   private Coroutine shootCoroutine;
-  public bool IsActive
-    {
-        set{ isActive = value; }
-    } 
   private void OnEnable()
   {
     enemyHealth = null;
     isShooting = false;
-    IsActive = true;
+    IsActive = false;
     health.InitializeHealth(gunData.maxHealth);
     animator.Play(gunData.idleAnimationName, 0, 0f);
-    //SoundManager.instance.Play(gunData.appearSoundName);
+ //   SoundManager.instance.Play(gunData.appearSoundName);
   }
   private void Update()
     {
@@ -69,15 +62,12 @@ public class Gun : MonoBehaviour
       StopCoroutine(shootCoroutine);
 
     }
+
     animator.Play(gunData.dieAnimationName, 0, 0f);
     isShooting = false;
     enemyHealth = null;
     SoundManager.instance.Play(gunData.dieShootName);
-    StartCoroutine(DieRoutine());
+    StartCoroutine(DieRoutine(gunData.dieAnimationName));
   }
-    private IEnumerator DieRoutine()
-    {
-    yield return new WaitForSeconds(animator.GetCurrentAnimatorStateInfo(0).length);
-    gameObject.SetActive(false);
-    }
+ 
 }

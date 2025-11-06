@@ -46,14 +46,18 @@ public class GunCreator : MonoBehaviour
             }
             else
             {
-                objectToPlace.GetComponent<Gun>().IsActive = true;
+                BasePlant plant = objectToPlace.GetComponent<BasePlant>();
+                plant.IsActive = true;
+                plant.CurrentStep = currentStep;
                 currentStep.IsOccupied = true;
+             
             }
             objectToPlace = null;
         }
     }
     public void SetObjectToPlace(Transform objTransform)
     {
+        Debug.Log("Agregar objeto");
         objectToPlace = objTransform;
         objectPlaced = false;
         currentStep = null;

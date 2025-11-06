@@ -54,7 +54,7 @@ public class Enemy : MonoBehaviour
     }
     private IEnumerator Attack()
     {
-        while (targetHealth.CurrentHealth > 0)
+        while (targetHealth != null && targetHealth.CurrentHealth > 0)
         {
             SoundManager.instance.Play("zombie_attack");
             animator.Play(enemyData.attackAnimation, 0, 0f);
@@ -64,6 +64,7 @@ public class Enemy : MonoBehaviour
             targetHealth.TakeDamage(enemyData.damage);
             yield return new WaitForSeconds(enemyData.timeBetweenAttacks);
         }
+        targetHealth = null;
         attackCoroutine = null;
         StartLooking();
     }
