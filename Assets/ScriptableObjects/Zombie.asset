@@ -12,6 +12,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9d8b89ebb800c564fb214989868fb295, type: 3}
   m_Name: Zombie
   m_EditorClassIdentifier: 
+  maxHealth: 0
+  actionAssets:
+  - soundName: 
+    animationName: Idle
+    actionKey: 0
+  - soundName: appear
+    animationName: 
+    actionKey: 4
+  - soundName: shoot
+    animationName: Shoot
+    actionKey: 2
+  - soundName: die
+    animationName: Die
+    actionKey: 5
   attackRange: 3.5
   timeBetweenAttacks: 2
   attackDuration: 1.5
@@ -19,9 +33,3 @@ MonoBehaviour:
   speed: 1
   damage: 30
   enemyName: Zombie
-  attackAnimation: Attack
-  deathAnimation: Die
-  walkAnimation: Walk
-  hitAnimation: Hit
-  winAnimation: Win
-  idleAnimation: Idle

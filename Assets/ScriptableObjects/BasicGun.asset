@@ -12,12 +12,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a801da3919b6ea64a9ba1c581a7f3693, type: 3}
   m_Name: BasicGun
   m_EditorClassIdentifier: 
-  maxHealth: 30
+  maxHealth: 150
+  actionAssets:
+  - soundName: 
+    animationName: Idle
+    actionKey: 0
+  - soundName: appear
+    animationName: Hit
+    actionKey: 3
+  - soundName: die
+    animationName: Die
+    actionKey: 5
   fireRate: 2
   range: 1
-  shootAnimationName: Shoot
-  idleAnimationName: Idle
-  dieAnimationName: Die
-  shootSoundName: shoot
-  dieShootName: die
-  appearSoundName: appear

@@ -11,10 +11,10 @@ public class BasePlant : MonoBehaviour
     protected Animator animator;
     [SerializeField]
     protected Collider collider;
-    protected Step currentstep;
+    protected Step currentStep;
     public Step CurrentStep
     {
-        set { currentstep = value; }
+        set { currentStep = value; }
     }
     protected bool isActive;
     public bool IsActive

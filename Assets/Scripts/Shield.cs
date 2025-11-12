@@ -9,19 +9,19 @@ public class Shield : BasePlant
     {
         isActive = false;
         health.InitializeHealth(shieldData.maxHealth);
-        animator.Play(shieldData.idleAnimationName, 0, 0f);
-        //SoundManager.instance.Play(shieldData.appearSoundName);
+        animator.Play(shieldData.GetAnimationName(ActionKey.Idle), 0, 0f);
+        SoundManager.instance.Play(shieldData.GetAnimationName(ActionKey.Appear));
     }
  
     public void Hit()
     {
-        animator.Play(shieldData.hitAnimationName, 0, 0f);
+        animator.Play(shieldData.GetAnimationName(ActionKey.Hit), 0, 0f);
     }
  
     public void Die()
     {
         isActive = false;
-       // SoundManager.instance.Play(shieldData.dieSoundName);
-        StartCoroutine(DieRoutine(shieldData.dieAnimationName));
+        SoundManager.instance.Play(shieldData.GetSoundName(ActionKey.Die));
+        StartCoroutine(DieRoutine(shieldData.GetAnimationName(ActionKey.Die)));
     }
 }

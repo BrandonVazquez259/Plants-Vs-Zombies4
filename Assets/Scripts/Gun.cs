@@ -24,8 +24,8 @@ public class Gun : BasePlant
     isShooting = false;
     IsActive = false;
     health.InitializeHealth(gunData.maxHealth);
-    animator.Play(gunData.idleAnimationName, 0, 0f);
- //   SoundManager.instance.Play(gunData.appearSoundName);
+    animator.Play(gunData.GetAnimationName(ActionKey.Idle), 0, 0f);
+  // SoundManager.instance.Play(gunData.appearSoundName(ActionKey.Appear));
   }
   private void Update()
     {
@@ -48,9 +48,9 @@ public class Gun : BasePlant
     while (enemyHealth && enemyHealth.CurrentHealth > 0)
     {
       yield return new WaitForSeconds(gunData.fireRate);
-      animator.Play(gunData.shootAnimationName, 0, 0f);
+      animator.Play(gunData.GetAnimationName(ActionKey.Attack), 0, 0f);
       bulletPool.InstantiateObject(bulletPivot);
-      SoundManager.instance.Play(gunData.shootSoundName);
+      SoundManager.instance.Play(gunData.GetSoundName(ActionKey.Attack));
     }
     isShooting = false;
     enemyHealth = null;
@@ -62,12 +62,12 @@ public class Gun : BasePlant
       StopCoroutine(shootCoroutine);
 
     }
-
-    animator.Play(gunData.dieAnimationName, 0, 0f);
+    currentStep.IsOccupied = false;
+    currentStep = null;
     isShooting = false;
     enemyHealth = null;
-    SoundManager.instance.Play(gunData.dieShootName);
-    StartCoroutine(DieRoutine(gunData.dieAnimationName));
+    SoundManager.instance.Play(gunData.GetSoundName(ActionKey.Die));
+    StartCoroutine(DieRoutine(gunData.GetAnimationName(ActionKey.Die)));
   }
  
 }
