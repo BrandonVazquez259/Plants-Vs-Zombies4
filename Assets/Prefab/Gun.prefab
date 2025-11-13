@@ -773,6 +773,9 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  onDamaged:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!114 &3954997476589159062
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -787,7 +790,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: {fileID: 3251235615801971226}
   animator: {fileID: 4624123778007788154}
-  collider: {fileID: 0}
+  collider: {fileID: 7374958404791232453}
   gunData: {fileID: 11400000, guid: 162c368f2d7995f4c93b81977558d997, type: 2}
   bulletPool: {fileID: 477324080648651892}
   bulletPivot: {fileID: 3140176549233206577}

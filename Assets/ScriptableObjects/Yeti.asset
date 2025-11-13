@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9d8b89ebb800c564fb214989868fb295, type: 3}
-  m_Name: Zombie
+  m_Name: Yeti
   m_EditorClassIdentifier: 
   maxHealth: 100
   actionAssets:
@@ -26,10 +26,10 @@ MonoBehaviour:
   - soundName: zombie_dies
     animationName: Die
     actionKey: 5
-  attackRange: 3.5
-  timeBetweenAttacks: 2
-  attackDuration: 1.5
-  health: 200
-  speed: 1.5
-  damage: 30
+  attackRange: 1.5
+  timeBetweenAttacks: 5
+  attackDuration: 2
+  health: 400
+  speed: 1
+  damage: 50
   enemyName: Zombie

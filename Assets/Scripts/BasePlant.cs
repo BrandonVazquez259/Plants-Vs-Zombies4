@@ -17,7 +17,7 @@ public class BasePlant : MonoBehaviour
         set { currentStep = value; }
     }
     protected bool isActive;
-    public bool IsActive
+    public virtual bool IsActive
     {
         set
         {

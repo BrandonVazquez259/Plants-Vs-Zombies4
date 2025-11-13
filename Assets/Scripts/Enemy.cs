@@ -43,7 +43,7 @@ public class Enemy : MonoBehaviour
             transform.Translate(Vector3.left * enemyData.speed * Time.deltaTime);
             Vector3 forward = transform.TransformDirection(Vector3.left);
             Vector3 rayOrigin = transform.position + Vector3.up * raycastOffset;
-            if (Physics.Raycast(rayOrigin, forward, out RaycastHit hit, enemyData.attackRange, enemiesLayer))
+            if (Physics.Raycast(rayOrigin, forward, out RaycastHit hit, enemyData.attackRange, enemiesLayer, QueryTriggerInteraction.Ignore))
             {
                 isAttacking = true;
                 targetHealth = hit.collider.GetComponent<Health>();
