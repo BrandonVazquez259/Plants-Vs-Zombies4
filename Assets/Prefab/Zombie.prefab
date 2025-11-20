@@ -137,7 +137,7 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 1.61, y: 4.06, z: 1.32}
+  m_Size: {x: 1.88, y: 4.06, z: 3.07}
   m_Center: {x: 0, y: 1.91, z: 0}
 --- !u!114 &8915929487281702497
 MonoBehaviour:
@@ -167,6 +167,9 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  onDamaged:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!114 &8089760407336867265
 MonoBehaviour:
   m_ObjectHideFlags: 0
