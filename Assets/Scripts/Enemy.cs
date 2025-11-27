@@ -16,6 +16,7 @@ public class Enemy : MonoBehaviour
     [SerializeField]
     private UnityEvent<Transform> onAttackTarget;
     private UnityEvent onDie = new UnityEvent();
+    public UnityEvent OnDie =>onDie;
     private bool isAttacking = false;
     private Coroutine attackCoroutine;
     private Health targetHealth;
