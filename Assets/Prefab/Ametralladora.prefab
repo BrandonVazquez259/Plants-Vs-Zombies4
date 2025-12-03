@@ -322,7 +322,7 @@ MonoBehaviour:
   health: {fileID: 4386079283102010295}
   animator: {fileID: 7757559449260016668}
   collider: {fileID: 617799046699740909}
-  gunData: {fileID: 11400000, guid: 162c368f2d7995f4c93b81977558d997, type: 2}
+  gunData: {fileID: 11400000, guid: cd3ac10f0f2a0974395e770a3a5249bd, type: 2}
   bulletPool: {fileID: 5705200238945930772}
   bulletPivot: {fileID: 3369167299111441815}
   enemiesLayer:
