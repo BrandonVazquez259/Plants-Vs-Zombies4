@@ -21,11 +21,17 @@ MonoBehaviour:
     animationName: Attack
     actionKey: 2
   - soundName: hit_object
-    animationName: Hit
+    animationName: 
     actionKey: 3
   - soundName: zombie_dies
     animationName: Die
     actionKey: 5
+  - soundName: zombie_appear
+    animationName: 
+    actionKey: 4
+  - soundName: zombie_appear
+    animationName: Dancing
+    actionKey: 6
   attackRange: 3.5
   timeBetweenAttacks: 2
   attackDuration: 1.5
