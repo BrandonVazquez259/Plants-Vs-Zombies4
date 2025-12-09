@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1a6ad5c8678adfb4292559f309b27110, type: 3}
-  m_Name: Level1
+  m_Name: Level3
   m_EditorClassIdentifier: 
   enemiesToSpawn:
   - spawnTime: 2
@@ -22,4 +22,4 @@ MonoBehaviour:
   - spawnTime: 10
     enemyType: 0
     laneIndex: 0
-  availablePlants: 0300000001000000
+  availablePlants: 030000000100000000000000

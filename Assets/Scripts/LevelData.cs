@@ -4,4 +4,6 @@ using UnityEngine;
 public class LevelData : ScriptableObject
 {
     public InstantiateEnemy[] enemiesToSpawn;
+    
+    public PlantType[] availablePlants;
 }
