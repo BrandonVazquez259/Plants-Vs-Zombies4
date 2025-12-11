@@ -791,14 +791,13 @@ MonoBehaviour:
   health: {fileID: 3251235615801971226}
   animator: {fileID: 4624123778007788154}
   collider: {fileID: 7374958404791232453}
-  gunData: {fileID: 11400000, guid: 162c368f2d7995f4c93b81977558d997, type: 2}
+  gunData: {fileID: 0}
   bulletPool: {fileID: 477324080648651892}
   bulletPivot: {fileID: 3140176549233206577}
   enemiesLayer:
     serializedVersion: 2
     m_Bits: 128
-  raycastOffset: 0
-  isShooting: 0
+  raycastOffset: 50
 --- !u!1 &8770210955282290652
 GameObject:
   m_ObjectHideFlags: 0

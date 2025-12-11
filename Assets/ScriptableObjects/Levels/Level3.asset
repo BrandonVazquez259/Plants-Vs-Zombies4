@@ -21,5 +21,11 @@ MonoBehaviour:
     laneIndex: 1
   - spawnTime: 10
     enemyType: 0
-    laneIndex: 0
+    laneIndex: 3
+  - spawnTime: 10
+    enemyType: 0
+    laneIndex: 2
+  - spawnTime: 15
+    enemyType: 0
+    laneIndex: 4
   availablePlants: 030000000100000000000000
