@@ -30,7 +30,7 @@ MonoBehaviour:
     - line: '|   AndroidProfiler: 0'
     - line: '|   AndroidFilterTouchesWhenObscured: 0'
     - line: '|   AndroidEnableSustainedPerformanceMode: 0'
-    - line: '|   defaultScreenOrientation: 1'
+    - line: '|   defaultScreenOrientation: 2'
     - line: '|   targetDevice: 2'
     - line: '|   useOnDemandResources: 0'
     - line: '|   accelerometerFrequency: 60'
@@ -315,7 +315,7 @@ MonoBehaviour:
     - line: '|   - m_BuildTarget: '
     - line: '|     m_Icons:'
     - line: '|     - serializedVersion: 2'
-    - line: '|       m_Icon: {fileID: 2800000, guid: cea46bb38b1b11249aa3a5f14599d956,
+    - line: '|       m_Icon: {fileID: 2800000, guid: 861640e0bcefc9b4ea72c68f26295518,
         type: 3}'
     - line: '|       m_Width: 128'
     - line: '|       m_Height: 128'

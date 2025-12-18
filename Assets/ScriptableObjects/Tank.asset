@@ -17,13 +17,13 @@ MonoBehaviour:
   - soundName: 
     animationName: Walk
     actionKey: 1
-  - soundName: zombie_attack
+  - soundName: Tank_Attack
     animationName: Attack
     actionKey: 2
-  - soundName: hit_object
+  - soundName: Tank_Hit
     animationName: Hit
     actionKey: 3
-  - soundName: zombie_dies
+  - soundName: Tank_Die
     animationName: Die
     actionKey: 5
   attackRange: 1.5

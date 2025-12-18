@@ -13,19 +13,19 @@ MonoBehaviour:
   m_Name: Level4
   m_EditorClassIdentifier: 
   enemiesToSpawn:
-  - spawnTime: 5
+  - spawnTime: 0
     enemyType: 0
     laneIndex: 0
-  - spawnTime: 6
+  - spawnTime: 1
     enemyType: 1
     laneIndex: 2
-  - spawnTime: 10
+  - spawnTime: 1
     enemyType: 0
     laneIndex: 3
-  - spawnTime: 10
+  - spawnTime: 1
     enemyType: 0
     laneIndex: 4
-  - spawnTime: 15
+  - spawnTime: 1
     enemyType: 0
     laneIndex: 1
   availablePlants: 030000000100000000000000
